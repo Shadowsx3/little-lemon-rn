@@ -54,8 +54,8 @@ export const AppProvider = ({ children }) => {
 
   const resetApp = async (db) => {
     try {
-      await AsyncStorage.clear();
       await resetDatabase(db);
+      await AsyncStorage.clear();
       alert("App Async Storage & DB Reset. Please restart the app.");
     } catch (e) {
       alert("Error resetting DB and AsyncStorage...");

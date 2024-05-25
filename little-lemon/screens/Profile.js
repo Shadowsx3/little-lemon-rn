@@ -14,6 +14,7 @@ import CustomButton from "../components/CustomButton";
 import Avatar from "../components/Avatar";
 import CheckBox from "../components/CheckBox";
 import CustomTextInput from "../components/CustomTextInput";
+import { database } from "../database";
 
 const initialNotificationPrefState = {
   orderStatus: true,
@@ -30,14 +31,8 @@ const ProfileScreen = ({ navigation }) => {
   const [notificationPref, setNotificationPref] = useState(
     initialNotificationPrefState
   );
-  const {
-    database,
-    logOut,
-    updateUser,
-    globalState,
-    setOnboardingCompleted,
-    resetApp,
-  } = useContext(AppContext);
+  const { logOut, updateUser, globalState, setOnboardingCompleted, resetApp } =
+    useContext(AppContext);
 
   const { user } = globalState;
 
@@ -176,7 +171,9 @@ const ProfileScreen = ({ navigation }) => {
           </View>
           <CustomButton
             text="RESET APP"
-            onPress={() => resetApp(database)}
+            onPress={() => {
+              resetApp(database);
+            }}
             style={styles.resetButton}
           />
         </View>

@@ -82,7 +82,7 @@ const checkMenuTableAndPopulateData = async (db) => {
 
   const formattedItemsFromApi = menuItemsFromApi.map((item) => ({
     ...item,
-    image: `https://github.com/Shadowsx3/little-lemon-rn/blob/main/little-lemon/assets/images/${item.image}?raw=true`,
+    image: `https://raw.githubusercontent.com/Shadowsx3/little-lemon-rn/main/little-lemon/assets/images/${item.image}`,
   }));
   for (const item of formattedItemsFromApi) {
     await insertDish(
