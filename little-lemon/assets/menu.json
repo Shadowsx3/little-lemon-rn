@@ -1,44 +1,39 @@
 {
     "menu": [
       {
-        "id": 1,
-        "title": "Greek Salad",
-        "description": "The famous greek salad of crispy lettuce, peppers, olives, our Chicago.",
-        "price": "10",
+        "name": "Greek Salad",
+        "price": 12.99,
+        "description": "Our delicious salad is served with Feta cheese and peeled cucumber. Includes tomatoes, onions, olives, salt and oregano in the ingredients.",
         "image": "greekSalad.png",
         "category": "starters"
       },
       {
-        "id": 2,
-        "title": "Lemon Desert",
-        "description": "Traditional homemade Italian Lemon Ricotta Cake.",
-        "price": "10",
-        "image": "lemonDessert.png",
-        "category": "desserts" 
+        "name": "Bruschetta",
+        "price": 7.99,
+        "description": "Delicious grilled bread rubbed with garlic and topped with olive oil and salt. Our Bruschetta includes tomato and cheese.",
+        "image": "bruschetta.png",
+        "category": "starters"
       },
       {
-        "id": 3,
-        "title": "Grilled Fish",
-        "description": "Our Bruschetta is made from grilled bread that has been smeared with garlic and seasoned with salt and olive oil.",
-        "price": "10",
+        "name": "Grilled Fish",
+        "price": 20.00,
+        "description": "Fantastic grilled fish seasoned with salt.",
         "image": "grilledFish.png",
         "category": "mains"
       },
       {
-        "id": 4,
-        "title": "Pasta",
-        "description": "Penne with fried aubergines, cherry tomatoes, tomato sauce, fresh chilli, garlic, basil & salted ricotta cheese.",
-        "price": "10",
+        "name": "Pasta",
+        "price": 6.99,
+        "description": "Delicious pasta for your delight.",
         "image": "pasta.png",
-        "category": "mains"
+        "category": "mains"      
       },
       {
-        "id": 5,
-        "title": "Bruschetta",
-        "description": "Oven-baked bruschetta stuffed with tomatos and herbs.",
-        "price": "10",
-        "image": "bruschetta.png",
-        "category": "starters"
+        "name": "Lemon Dessert",
+        "price": 4.99,
+        "description": "You can't go wrong with this delicious lemon dessert!",
+        "image": "lemonDessert.png",
+        "category": "desserts"      
       }
     ]
   }
