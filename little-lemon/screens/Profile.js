@@ -30,8 +30,14 @@ const ProfileScreen = ({ navigation }) => {
   const [notificationPref, setNotificationPref] = useState(
     initialNotificationPrefState
   );
-  const { logOut, updateUser, globalState, setOnboardingCompleted } =
-    useContext(AppContext);
+  const {
+    database,
+    logOut,
+    updateUser,
+    globalState,
+    setOnboardingCompleted,
+    resetApp,
+  } = useContext(AppContext);
 
   const { user } = globalState;
 
@@ -56,16 +62,7 @@ const ProfileScreen = ({ navigation }) => {
     }
   };
 
-  const isValidPhoneNumber = (string) => {
-    const phonePattern = /^(\+1)?[0-9]{3}[\s.-]?[0-9]{3}[\s.-]?[0-9]{4}$/;
-    return phonePattern.test(string);
-  };
-
   const saveProfileChanges = async () => {
-    if (!isValidPhoneNumber(phoneNumber)) {
-      alert("Invalid phone number");
-      return;
-    }
     setOnboardingCompleted(true);
     try {
       updateUser({
@@ -177,6 +174,11 @@ const ProfileScreen = ({ navigation }) => {
             />
             <CustomButton text="Save Changes" onPress={saveProfileChanges} />
           </View>
+          <CustomButton
+            text="RESET APP"
+            onPress={() => resetApp(database)}
+            style={styles.resetButton}
+          />
         </View>
       </ScrollView>
     </TouchableWithoutFeedback>
@@ -229,6 +231,13 @@ const styles = StyleSheet.create({
   },
   discardButtonText: {
     color: colors.BLACK,
+  },
+  resetButton: {
+    backgroundColor: "red",
+    borderWidth: 0,
+    width: 200,
+    alignSelf: "center",
+    marginTop: 10,
   },
 });
 
