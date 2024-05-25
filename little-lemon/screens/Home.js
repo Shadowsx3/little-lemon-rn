@@ -11,6 +11,7 @@ import { useEffect, useState } from "react";
 import { colors } from "../constants/color";
 import { database, filterMenuItems, selectAllMenu } from "../database";
 import HeroSection from "../components/Hero";
+import debounce from "../utils/debounce";
 
 export default function HomeScreen({ navigation }) {
   const [menuItems, setMenuItems] = useState([]);
@@ -47,7 +48,12 @@ export default function HomeScreen({ navigation }) {
 
   const filterMenu = () => {
     try {
-      filterMenuItems(database, activeFilters, searchInput).then(setMenuItems);
+      debounce(
+        filterMenuItems(database, activeFilters, searchInput).then(
+          setMenuItems
+        ),
+        500
+      );
     } catch (_) {}
   };
 
